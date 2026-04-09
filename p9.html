@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Responsive Page</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* BASIC STYLING */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0;
+            /* 3. ANIMATION: Makes the header fade in and move up */
+            animation: slideUp 1.2s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 4. MULTIPLE COLUMNS: This creates the layout */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr; /* One column on mobile */
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Responsive Breakpoint: When screen is wider than 768px */
+        @media (min-width: 768px) {
+            .container {
+                grid-template-columns: 1fr 1fr 1fr; /* Three columns on Desktop */
+            }
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            /* 5. TRANSFORMATION: Smooth movement on hover */
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05) rotate(1deg); /* Grows slightly and tilts */
+            background-color: #fff;
+        }
+
+        .icon {
+            font-size: 40px;
+            color: #6c63ff;
+            margin-bottom: 15px;
+        }
+
+        h2 { margin: 10px 0; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Responsive Design Lab</h1>
+        <p>A simple page using CSS3 magic!</p>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <i class="fa-solid fa-rocket icon"></i>
+            <h2>Speed</h2>
+            <p>Animations make the site feel fast and interactive.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-layer-group icon"></i>
+            <h2>Columns</h2>
+            <p>Using CSS Grid, we can stack items or spread them out.</p>
+        </div>
+
+        <div class="card">
+            <i class="fa-solid fa-mobile-screen icon"></i>
+            <h2>Mobile</h2>
+            <p>This layout adjusts itself based on your screen size.</p>
+        </div>
+    </div>
+
+</body>
+</html>
